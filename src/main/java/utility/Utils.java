@@ -2,12 +2,12 @@ package utility;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import configBrowser.BrowserConfig;
 
@@ -52,10 +52,10 @@ public class Utils {
         return driver1; // return the intialized WebDriver
     }
     */
-     public WebDriver getChromeBrowser() {
-         brc = new BrowserConfig();
-         driver1 = brc.getChromeDriver(); // launch Chrome directly
-         return driver1;
+     public static WebDriver getBrowser() {
+         // Path to chromedriver.exe if not already in PATH
+         System.setProperty("webdriver.chrome.driver", "C:\\path\\to\\chromedriver.exe");
+         return new ChromeDriver();
      }
     public String captureScreenshot(WebDriver driver, String screenshotName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;

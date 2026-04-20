@@ -24,7 +24,7 @@ public class FlightBookingTest {
     public void setUp() throws Exception {
         // Launch browser and navigate to landing page
         util = new Utils();
-        driver = util.getBrowser();
+        driver = Utils.getBrowser();
         obr = new ObjectReader();
         driver.get(obr.getProperty("landingPage.URL"));
     }
