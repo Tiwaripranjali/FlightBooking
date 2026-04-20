@@ -24,7 +24,7 @@ public class Utils {
      * Prompts the user to select a browser and initializes it.
      * @return WebDriver instance for the chosen browser
      */
-    public WebDriver getBrowser() {
+    /*public WebDriver getBrowser() {
         brc = new BrowserConfig();
 
         // Scanner is used to read user input from the console
@@ -51,6 +51,12 @@ public class Utils {
 
         return driver1; // return the intialized WebDriver
     }
+    */
+     public WebDriver getChromeBrowser() {
+         brc = new BrowserConfig();
+         driver1 = brc.getChromeDriver(); // launch Chrome directly
+         return driver1;
+     }
     public String captureScreenshot(WebDriver driver, String screenshotName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File src = ts.getScreenshotAs(OutputType.FILE);
